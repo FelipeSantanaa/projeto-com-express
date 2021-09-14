@@ -22,9 +22,13 @@
         <p><b>Telefone:</b> <%= usuario.telefone %></p>
       </li>
       <li>
-        <p><b>Nascimento:</b> <%= usuario.nascimento %></p>
+        <p><b>Nascimento:</b> <%= new Date(usuario.nascimento).toLocaleDateString('pt-BR') %></p>
+      </li>
+      <li>
+        <p><b>Cor Preferida:</b> <span data-corpreferida="<%= usuario.corPreferida %>" style="--cor-preferida: <%= usuario.corPreferida %>"><%= usuario.corPreferida %></span></p>
       </li>
     </ul>
+    <p class="card__description bio"><%= usuario.bio %></p>
     <div class="btn-group btn-group--center">
       <a href="/usuarios" title="Ver todos os usuários" class="btn btn--tertiary-dark">Ver Todos</a>
     </div>
